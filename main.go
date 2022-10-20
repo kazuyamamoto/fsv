@@ -13,7 +13,8 @@ var address = flag.String("address", ":8080", "IP address and port to listen con
 func main() {
 	flag.Parse()
 
-	fmt.Printf("directory=%q, address=%q\n", *directory, *address)
+	fmt.Printf("Listening address=%q\n", *address)
+	fmt.Printf("Serving directory=%q\n", *directory)
 
 	dir := http.Dir(*directory)
 	handler := http.FileServer(dir)
